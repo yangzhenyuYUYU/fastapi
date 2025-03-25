@@ -23,7 +23,7 @@ app.add_middleware(
 app.include_router(auth.router, prefix="/api")
 app.include_router(user.router, prefix="/api")
 
-# 注册数据库
+# 注册数据库，修改setting.py文件相关配置后，方可解开使用
 # register_tortoise(
 #     app,
 #     config=TORTOISE_ORM,
