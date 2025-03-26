@@ -1,8 +1,15 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from tortoise.contrib.fastapi import register_tortoise
-from config.setting import TORTOISE_ORM
-from router import auth, user
+from config.settings import TORTOISE_ORM
+from router import (
+    auth, 
+    user, 
+    # upload, 
+    card, 
+    trade, 
+    wx
+)
 
 app = FastAPI(
     title="FastAPI Demo",
@@ -22,6 +29,11 @@ app.add_middleware(
 # 注册路由
 app.include_router(auth.router, prefix="/api")
 app.include_router(user.router, prefix="/api")
+# app.include_router(upload.router, prefix="/api")
+app.include_router(card.router, prefix="/api")
+app.include_router(trade.router, prefix="/api")
+app.include_router(wx.router, prefix="/api")
+
 
 # 注册数据库，修改setting.py文件相关配置后，方可解开使用
 # register_tortoise(
