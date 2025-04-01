@@ -29,7 +29,7 @@ class Settings:
         self.DB_PASSWORD = '123456'
         self.DB_HOST = 'localhost'
         self.DB_PORT = '3306'
-        self.DB_NAME = 'fastapi_demo'
+        self.DB_NAME = 'my_app'
         
         # JWT配置
         self.SECRET_KEY = "your-secret-key"

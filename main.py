@@ -36,12 +36,12 @@ app.include_router(wx.router, prefix="/api")
 
 
 # 注册数据库，修改setting.py文件相关配置后，方可解开使用
-# register_tortoise(
-#     app,
-#     config=TORTOISE_ORM,
-#     generate_schemas=True,
-#     add_exception_handlers=True,
-# )
+register_tortoise(
+    app,
+    config=TORTOISE_ORM,
+    generate_schemas=True,
+    add_exception_handlers=True,
+)
 
 # 启动命令：
 # uvicorn main:app --reload --host 0.0.0.0 --port 8000
